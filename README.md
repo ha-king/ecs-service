@@ -29,16 +29,13 @@ This application is deployed using AWS CloudFormation.
 |----------------|------|
 |ECS Service |<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=ecs-service-cluster&templateURL=https://inf-training-resources.s3.amazonaws.com/ecs-service/ecs-service-cluster.yml" target="_blank">![Launch](./img/launch-stack.png?raw=true "Launch")</a>|
 ---
-#### AWSCLI Deployment scenarios:
+#### AWS CLI Deployment scenarios:
 * Local bash terminal
-* <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
 * <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
 
 #### CloudFormation deployment options:
 * Local bash terminal
 * <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
-* <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
-* <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1">CloudFormation</a> (N.Virginia)
 * <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1">CloudFormation</a> (N.Virginia)
 
 Create ECR pipeline resources: (add parameters)
