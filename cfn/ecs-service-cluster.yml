@@ -75,7 +75,7 @@ Resources:
         - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceRole
 
   Service:
-    DependsOn: LoadBalancer
+    DependsOn: TargetGroup
     Type: AWS::ECS::Service
     Properties:
       Cluster: !Ref Cluster
