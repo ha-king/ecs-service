@@ -1,10 +1,10 @@
 Description: >
-  Create ECS Cluster resources
+  Create ECS service and cluster resources for simple application.
 
 Parameters:
   InstanceType:
     Type: String
-    Default: t2.large
+    Default: t2.small
   Subnet1:
     Type: AWS::EC2::Subnet::Id
   Subnet2:
