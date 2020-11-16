@@ -13,7 +13,7 @@ This solution will create an ECS cluster and service for a simple application:
 * IAM InstanceProfile
 * SecurityGroup
 
-## Deployment instructions
+## Deployment on AWS
 
 This application is deployed using AWS CloudFormation.
 
@@ -22,6 +22,17 @@ This application is deployed using AWS CloudFormation.
 * Subnet1
 * Subnet2
 * VPC
+
+##### Deploy via AWS Console
+
+|Stacks          |Deploy|
+|----------------|------|
+|ECS Service |<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=ecs-service-cluster&templateURL=https://inf-training-resources.s3.amazonaws.com/ecs-service/ecs-service-cluster.yml" target="_blank">![Launch](./img/launch-stack.png?raw=true "Launch")</a>|
+---
+#### AWSCLI Deployment scenarios:
+* Local bash terminal
+* <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
+* <a href="https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2">Cloud9</a> (Oregon)
 
 #### CloudFormation deployment options:
 * Local bash terminal
@@ -40,7 +51,6 @@ Cleanup:
 Delete stack
 ```
 aws cloudformation delete-stack --stack-name ecs-service-cluster
-
 ```
 
 ## Credits
