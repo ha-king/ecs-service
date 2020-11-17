@@ -2,6 +2,16 @@ Description: >
   Create ECS service and cluster resources for simple application.
 
 Parameters:
+  RepositoryName:
+    Description: Amazon ECR repository name
+    Type: String
+  SharedResourceStack:
+    Description: Name of an active CloudFormation stack that contains the shared workshop resources, such as the VPC.
+    Type: String
+    MinLength: 1
+    MaxLength: 255
+    AllowedPattern: "^[a-zA-Z][-a-zA-Z0-9]*$"
+    Default: ecs-workshop-shared-resources
   InstanceType:
     Type: String
     Default: t2.small
@@ -79,7 +89,7 @@ Resources:
       DesiredCount: 1
       TaskDefinition: !Ref TaskDefinition
       LoadBalancers:
-        - ContainerName: nginx
+        - ContainerName: ghc
           ContainerPort: 80
           TargetGroupArn: !Ref TargetGroup
 
@@ -87,8 +97,8 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       ContainerDefinitions:
-        - Name: nginx
-          Image: nginx
+        - Name: ghc
+          Image: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/${RepositoryName}"
           Essential: true
           Memory: 128
           MountPoints:
@@ -121,12 +131,12 @@ Resources:
     Properties:
       Name: !Sub ${AWS::StackName}-alb
       Subnets:
+        Fn::Split:
+        - ","
         - Fn::ImportValue:
             !Sub "${SharedResourceStack}:PublicSubnets"
       SecurityGroups:
-        - Fn::ImportValue:
-            !Sub "${SharedResourceStack}:SecurityGroups"
-
+        - !Ref SecurityGroupALB
   ECSRole:
     Type: AWS::IAM::Role
     Properties:
