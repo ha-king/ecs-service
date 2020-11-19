@@ -27,6 +27,7 @@ This application is deployed using AWS CloudFormation.
 
 |Stacks          |Deploy|
 |----------------|------|
+|ECS Shared |<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=ecs-workshop-shared-resources&templateURL=https://inf-training-resources.s3.amazonaws.com/ecs-service/shared_resources.yml" target="_blank">![Launch](./img/launch-stack.png?raw=true "Launch")</a>|
 |ECS Service |<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=ecs-service-cluster&templateURL=https://inf-training-resources.s3.amazonaws.com/ecs-service/ecs-service-cluster.yml" target="_blank">![Launch](./img/launch-stack.png?raw=true "Launch")</a>|
 ---
 #### AWS CLI Deployment scenarios:
